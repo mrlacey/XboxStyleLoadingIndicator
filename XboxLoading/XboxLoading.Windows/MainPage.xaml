@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="XboxLoading.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XboxLoading"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Green">
+        <Button Click="StartClicked">start</Button>
+        <Button Click="StopClicked" Margin="0,100,0,0">stop</Button>
+        <Button Click="ToggleClicked" Margin="0,200,0,0">toggle</Button>
+        <StackPanel
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+        <local:XboxStyleLoadingIndicator 
+            x:Name="Indicator"  
+            Margin="50"
+            Background="Green"
+            Foreground="White"
+            IsEnabled="{Binding Enabled}" />
+        <local:XboxStyleLoadingIndicator 
+            Height="48"
+            Width="480"
+            Background="Pink"
+            Foreground="Purple"
+            IsEnabled="{Binding Enabled}" />
+        <local:XboxStyleLoadingIndicator 
+            Width="320"
+            Background="Beige"
+            Foreground="DarkBlue"
+            IsEnabled="True" />
+        <local:XboxStyleLoadingIndicator 
+            Height="75"
+            Background="Yellow"
+            Foreground="DarkGreen"
+            IsEnabled="True" />
+            </StackPanel>
+    </Grid>
+</Page>
